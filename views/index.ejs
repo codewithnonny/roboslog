@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roboslog</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="home-page">
+      <div class="body">
+        <div class="left-side">
+          <div class="content">
+            <h2>RoboSlog WebRTC Project</h2>
+            <div class="action-btn">
+              <button class="btn green" onClick="startCall()">
+                <i class="icon-block faVideo"></i>
+                New Meeting
+              </button>
+              <div class="input-block">
+                <div class="input-section">
+                  <i class="icon-block faVideo"></i>
+                  <input
+                    placeholder="Enter a code or link"
+                    id="meeting-number"
+                  />
+                </div>
+                <button class="btn no-bg" onClick="joinCall()">Join</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const startCall = () => {
+        url = "http://localhost:3000/create-room";
+        window.location = url;
+      };
+
+      const joinCall = () => {
+        var meetingId = $("#meeting-number").val();
+        if (meetingId) {
+          url = `http://localhost:3000/${meetingId}`;
+          window.location = url;
+      }};
+    </script>
+  </body>
+</html>

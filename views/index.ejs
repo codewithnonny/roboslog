@@ -45,14 +45,14 @@
 
     <script>
       const startCall = () => {
-        url = "http://localhost:3000/create-room";
+        url = "/create-room";
         window.location = url;
       };
 
       const joinCall = () => {
         var meetingId = $("#meeting-number").val();
         if (meetingId) {
-          url = `http://localhost:3000/${meetingId}`;
+          url = `/${meetingId}`;
           window.location = url;
       }};
     </script>
